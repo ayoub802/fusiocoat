@@ -1,8 +1,8 @@
 import React from 'react'
-import Item1 from "../assets/how_work1.svg"
-import Item2 from "../assets/how_work2.svg"
-import Item3 from "../assets/how_work3.svg"
-import Item4 from "../assets/how_work4.svg"
+import Item1 from "../assets/how_work1.png"
+import Item2 from "../assets/how_work2.png"
+import Item3 from "../assets/how_work3.png"
+import Item4 from "../assets/how_work4.png"
 export const HowItWork = () => {
   return (
     <section className='bg-white'>
@@ -14,24 +14,24 @@ export const HowItWork = () => {
             </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 text-center sideLine">
             <div class="relative px-4">
-                <img src={Item1} class="mb-4 mx-auto" alt="" />
-                    <h5 class="font-bold text__20 mb-2">Pick Location</h5>
-                    <p class="text__14 text-[#525252]">We do things smarter, not harder, with grace and gratitude.</p>
+                <img src={Item1} class="mb-4 mx-auto w-14 h-14 object-cover" alt="" />
+                    <h5 class="font-bold text__20 mb-2 capitalize">EASY APPLICATIONS</h5>
+                    <p class="text__14 text-[#525252]">A single coating for a maximum efficiency</p>
             </div>
         <div class="relative px-4">
-            <img src={Item2} class="mb-4 mx-auto" alt="" />
-                <h5 class="font-bold text__20 mb-2">Pick Your Car</h5>
-                <p class="text__14 text-[#525252]">Take a look at availableTeslas, their features&amp; pricing</p>
+            <img src={Item2} class="mb-4 mx-auto w-14 h-14 object-cover" alt="" />
+                <h5 class="font-bold text__20 mb-2 capitalize">SAFE TO USE</h5>
+                <p class="text__14 text-[#525252]">Non-toxic and eco-friendly products</p>
         </div>
         <div class="relative px-4">
-            <img src={Item3} class="mb-4 mx-auto" alt="" />
-            <h5 class="font-bold text__20 mb-2">Confirmation</h5>
-            <p class="text__14 text-[#525252]">Just verify your driver's license, add a payment methodand you're good to go</p>
+            <img src={Item3} class="mb-4 mx-auto w-14 h-14 object-cover" alt="" />
+            <h5 class="font-bold text__20 mb-2 capitalize">DURABILITY</h5>
+            <p class="text__14 text-[#525252]">Unsurpassed chemical and weather resistance</p>
         </div>
         <div class="relative px-4">
-            <img src={Item4} class="mb-4 mx-auto" alt="" />
-            <h5 class="font-bold text__20 mb-2">Start Driving</h5>
-            <p class="text__14 text-[#525252]">Charging, insurance and roadside assistance are already included in the price</p>
+            <img src={Item4} class="mb-4 mx-auto w-14 h-14 object-cover" alt="" />
+            <h5 class="font-bold text__20 mb-2 capitalize">AFTER SALE</h5>
+            <p class="text__14 text-[#525252]">Shipping within 24 h – Happy or refunded – Immediate support</p>
         </div>
         </div>
         </div>
