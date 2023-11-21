@@ -17609,3 +17609,37 @@ section {
 }
 
 /*# sourceMappingURL=main.5bbd3fb0.css.map*/
+.react-dropdown-select-item{
+    background-color: #000 !important;
+    color: #fff;
+    padding: 15px !important;
+}
+
+.react-dropdown-select-item:last-child{
+    border-bottom: 0px;
+}
+
+.css-wmy1p7-ReactDropdownSelect:focus, .css-wmy1p7-ReactDropdownSelect:focus-within{
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.css-8t6iuc-DropDown{
+    top: 50px !important;
+    border: 1px solid #000 !important;
+    border-top: 0px;
+    border-bottom-left-radius: 24px !important;
+    border-bottom-right-radius: 24px !important;
+}
+
+.css-1c8t16q-InputComponent::placeholder{
+    font-size: 14px !important;
+    color: #000 !important;
+}
+
+
+
+/* .css-z2hyoe-ItemComponent{
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+} */

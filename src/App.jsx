@@ -5,6 +5,9 @@ import './App.css'
 import "./font.css"
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { Home } from './pages/Home'
+import { Aeronautique } from './pages/Aeronautique'
+import { Marine } from './pages/Marine'
+import { Automobile } from './pages/Automobile'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +17,9 @@ function App() {
       <Router>
         <Routes>
            <Route path='/' element={<Home />}/>
+           <Route path='/aeronautique' element={<Aeronautique />}/>
+           <Route path='/marine' element={<Marine />}/>
+           <Route path='/automobile' element={<Automobile />}/>
         </Routes>
       </Router>
     </>
