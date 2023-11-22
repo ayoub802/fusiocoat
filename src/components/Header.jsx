@@ -1,7 +1,11 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import Logo from "../assets/logo.png"
+import Eng from "../assets/english.png"
+import fr from "../assets/french.png"
 import { ArrowDown2, Bag2 } from 'iconsax-react';
+import { useTranslation } from 'react-i18next'
+import { CartScreen } from './CartScreen'
 export const Header = () => {
     let location = useLocation();
     const [ToogleMenuResponsive, setToogleMenuResponsive] = useState(false);
@@ -9,7 +13,16 @@ export const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isOpen1, setIsOpen1] = useState(false)
     const [isOpen2, setIsOpen2] = useState(false)
+    const [isDrop, setIsDrop] = useState(false);
+    const dropdownItems = ['Option 1', 'Option 2', 'Option 3'];
+    const [openCart, setOpenCart] = useState(false)
 
+    const [SelectOption, setSelectOption] = useState('fr')
+    const [t, i18n] = useTranslation("global");
+
+    const handleChangeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    }
 
     const statatusSet = () => {
         const urlList = [
@@ -25,6 +38,15 @@ export const Header = () => {
         } else {
             statatusSet()
         }
+    }
+
+    const toggleDropdown = () => {
+        setIsDrop(!isDrop);
+    };
+
+    const onOptionClicked = (value) => {
+        setSelectOption(value);
+        setIsDrop(false)
     }
 
     useEffect(() => {
@@ -74,10 +96,10 @@ export const Header = () => {
 
                 <ul className='list-none p-0 m-0 hidden lg:flex items-center gap-4 text__16'>
                     <li>
-                        <NavLink to="/" className={'font-medium text-Mwhite'}>Accueil</NavLink>
+                        <NavLink to="/" className={'font-medium text-Mwhite'}>{t('Accueil')}</NavLink>
                     </li>
-                    <li className='flex items-center gap-2 cursor-pointer relative'>
-                        <button  className={'font-medium text-Mwhite'} onClick={() => {setIsOpen(!isOpen); setIsOpen1(false); setIsOpen2(false)}}>FUSIOCOAT®</button>
+                    <li className='flex items-center gap-2 cursor-pointer relative' onClick={() => {setIsOpen(!isOpen); setIsOpen1(false); setIsOpen2(false)}}>
+                        <button  className={'font-medium text-Mwhite'} >FUSIOCOAT®</button>
                         <ArrowDown2
                         size="18"
                         color="#FFF"
@@ -86,29 +108,30 @@ export const Header = () => {
 
                         {
                             isOpen && (
-                                <ul className='bg-white rounded-sm absolute top-8 w-full'>
-                                <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <NavLink to={'/automobile'} className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
-                                        Automobile
+                                <ul className='bg-black text-Mgreen rounded-sm absolute top-8 w-full'>
+                                    <NavLink to={'/automobile'} className='text-[13px] font-semibold  transition-all'>
+                                        <li className='py-3 px-3 border-b border-[#ccc]'>
+                                                {t('Automobile')}
+                                        </li>
                                     </NavLink>
-                                </li>
-                                <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <NavLink to={'/aeronautique'} className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
-                                      Aéronautique
+                                    <NavLink to={'/aeronautique'} className='text-[13px] font-semibold  transition-all'>
+                                        <li className='py-3 px-3 border-b border-[#ccc]'>
+                                            {t('Aéronautique')}
+                                        </li>
                                     </NavLink>
-                                </li>
-                                <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <NavLink to={"/marine"} className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
-                                    Marine
+                                    <NavLink to={"/marine"} className='text-[13px] font-semibold  transition-all'>
+                                        <li className='py-3 px-3 border-b border-[#ccc]'>
+                                            {t('Marine')}
+                                        </li>
                                     </NavLink>
-                                </li>
                                 </ul>
                             )
                         }
 
                     </li>
-                    <li className='flex items-center gap-2 cursor-pointer relative'>
-                        <button  className={'font-medium text-Mwhite'} onClick={() => {setIsOpen1(!isOpen1); setIsOpen(false); setIsOpen2(false)}}>En savoir plus</button>
+
+                    <li className='flex items-center gap-2 cursor-pointer relative' onClick={() => {setIsOpen1(!isOpen1); setIsOpen(false); setIsOpen2(false)}}>
+                        <button  className={'font-medium text-Mwhite'} >{t('En savoir plus')}</button>
                         <ArrowDown2
                         size="18"
                         color="#FFF"
@@ -117,28 +140,29 @@ export const Header = () => {
 
                         {
                             isOpen1 && (
-                                <ul className='bg-white rounded-sm absolute top-8 w-80'>
+                                <ul className='bg-black text-Mgreen rounded-sm absolute top-8 w-72'>
                                 <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <h2 className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
-                                      Qu’est ce qu’un revêtement céramique ?
+                                    <h2 className='text-[13px] font-semibold  transition-all'>
+                                      {t('Qu’est ce qu’un revêtement céramique ?')}
                                     </h2>
                                 </li>
                                 <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <h2 className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
-                                      Les revêtements céramiques Fusiocoat
+                                    <h2 className='text-[13px] font-semibold  transition-all'>
+                                      {t('Les revêtements céramiques Fusiocoat')}
                                     </h2>
                                 </li>
                                 <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <h2 className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
-                                      Comment appliquer Fusiocoat ?
+                                    <h2 className='text-[13px] font-semibold  transition-all'>
+                                      {t('Comment appliquer Fusiocoat ?')}
                                     </h2>
                                 </li>
                                 </ul>
                             )
                         }
                     </li>
-                    <li className='flex items-center gap-2 cursor-pointer relative'>
-                        <button to="/faq" className={'font-medium text-Mwhite'} onClick={() => {setIsOpen2(!isOpen2); setIsOpen(false); setIsOpen1(false)}}>Boutique</button>
+
+                    <li className='flex items-center gap-2 cursor-pointer relative' onClick={() => {setIsOpen2(!isOpen2); setIsOpen(false); setIsOpen1(false)}}>
+                        <button to="/faq" className={'font-medium text-Mwhite'}>{t('Boutique')}</button>
                         <ArrowDown2
                         size="18"
                         color="#FFF"
@@ -147,29 +171,29 @@ export const Header = () => {
 
                         {
                             isOpen2 && (
-                                <ul className='bg-white rounded-sm absolute top-8 w-[150px]'>
+                                <ul className='bg-black text-Mgreen rounded-sm absolute top-8 w-[150px]'>
                                 <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <h2 className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
+                                    <h2 className='text-[13px] font-semibold  transition-all'>
                                       FC-ONE ULTIMATE
                                     </h2>
                                 </li>
                                 <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <h2 className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
+                                    <h2 className='text-[13px] font-semibold  transition-all'>
                                       FC-GLASS
                                     </h2>
                                 </li>
                                 <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <h2 className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
+                                    <h2 className='text-[13px] font-semibold  transition-all'>
                                     FC-BOOST
                                     </h2>
                                 </li>
                                 <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <h2 className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
+                                    <h2 className='text-[13px] font-semibold  transition-all'>
                                     FC-ONE SMART
                                     </h2>
                                 </li>
                                 <li className='py-3 px-3 border-b border-[#ccc]'>
-                                    <h2 className='text-[13px] font-semibold hover:text-[#1e19d8] transition-all'>
+                                    <h2 className='text-[13px] font-semibold  transition-all'>
                                     FC-TRIM
                                     </h2>
                                 </li>
@@ -177,29 +201,151 @@ export const Header = () => {
                             )
                         }
                     </li>
+
                     <li>
-                        <NavLink to="/contact" className={'font-medium text-Mwhite'}>Devenir partenaire</NavLink>
+                        <NavLink to="/partner" className={'font-medium text-Mwhite'}>{t('Devenir partenaire')}</NavLink>
                     </li>
                     <li>
                         <NavLink to="/contact" className={'font-medium text-Mwhite'}>Contact</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact" className={'font-medium text-Mwhite'}>Mon compte</NavLink>
+                        <NavLink to="/contact" className={'font-medium text-Mwhite'}>{t('Mon compte')}</NavLink>
                     </li>
                 </ul>
 
+                 
 
+                 <div className='flex items-center gap-6'>
+                        <button className="hidden lg:block" onClick={() => setOpenCart(!openCart)}>
+                            <div className="rounded-full justify-center flex items-center relative">
+                            <Bag2
+                                size="22"
+                                color="#FFF"
+                                />
 
-                <NavLink to="/booking" className="hidden lg:block">
-                    <div className="rounded-full justify-center flex items-center relative">
-                    <Bag2
-                        size="22"
-                        color="#FFF"
-                        />
+                                <span className='w-4 h-4 bg-[#d9534f] rounded-full absolute -top-2 -right-2.5 text-[#fff] text-[10px] flex justify-center items-center'>2</span>
+                            </div>
+                        </button>
+                        {
+                            SelectOption == 'fr'
+                            ?
+                                <button onClick={() => {handleChangeLanguage("en"); setSelectOption("Eng")}} className='cursor-pointer'>
+                                  <img src={Eng} className='w-5 h-5'/>
+                                </button>
+                            :
+                            <button onClick={() => {handleChangeLanguage("fr"); setSelectOption("fr")}} className='cursor-pointer'>
+                              <img src={fr} className='w-5 h-5'/>
+                            </button>
+                        }
 
-                        <span className='w-4 h-4 bg-[#d9534f] rounded-full absolute -top-2 -right-2.5 text-[#fff] text-[10px] flex justify-center items-center'>2</span>
-                    </div>
-                </NavLink>
+                 </div>
+                
+                  {/* {
+                    openCart && (
+                        <> */}
+                        <div className={`fixed inset-0 bg-black/70 bg-opacity-75 transition-opacity ${!openCart ? "hidden" : "visible"}`}></div>
+                
+                        <div className="fixed  overflow-hidden ">
+                            <div className="absolute  overflow-hidden">
+                                <div className={`pointer-events-none fixed inset-y-0 ${!openCart ? "-right-[100%] transition-all duration-1000" : "right-[0%] transition-all duration-400"} flex max-w-full pl-10`}>
+                    
+                                <div className="pointer-events-auto w-screen max-w-md">
+                                    <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                                    <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+                                        <div className="flex items-start justify-between">
+                                        <h2 className="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
+                                        <div className="ml-3 flex h-7 items-center">
+                                            <button type="button" onClick={() => setOpenCart(false)} className="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
+                                            <span className="absolute -inset-0.5"></span>
+                                            <span className="sr-only">Close panel</span>
+                                            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                            </button>
+                                        </div>
+                                        </div>
+                        
+                                        <div className="mt-8">
+                                        <div className="flow-root">
+                                            <ul role="list" className="-my-6 divide-y divide-gray-200">
+                                            <li className="flex py-6">
+                                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center" />
+                                                </div>
+                        
+                                                <div className="ml-4 flex flex-1 flex-col">
+                                                <div>
+                                                    <div className="flex justify-between text-base font-medium text-gray-900">
+                                                    <h3>
+                                                        <a href="#">Throwback Hip Bag</a>
+                                                    </h3>
+                                                    <p className="ml-4">$90.00</p>
+                                                    </div>
+                                                    <p className="mt-1 text-sm text-gray-500">Salmon</p>
+                                                </div>
+                                                <div className="flex flex-1 items-end justify-between text-sm">
+                                                    <p className="text-gray-500">Qty 1</p>
+                        
+                                                    <div className="flex">
+                                                    <button type="button" className="font-medium text-black">Remove</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </li>
+                                            <li className="flex py-6">
+                                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." className="h-full w-full object-cover object-center" />
+                                                </div>
+                        
+                                                <div className="ml-4 flex flex-1 flex-col">
+                                                <div>
+                                                    <div className="flex justify-between text-base font-medium text-gray-900">
+                                                    <h3>
+                                                        <a href="#">Medium Stuff Satchel</a>
+                                                    </h3>
+                                                    <p className="ml-4">$32.00</p>
+                                                    </div>
+                                                    <p className="mt-1 text-sm text-gray-500">Blue</p>
+                                                </div>
+                                                <div className="flex flex-1 items-end justify-between text-sm">
+                                                    <p className="text-gray-500">Qty 1</p>
+                        
+                                                    <div className="flex">
+                                                    <button type="button" className="font-medium text-black">Remove</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </li>
+                                            </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                                        <div className="flex justify-between text-base font-medium text-gray-900">
+                                        <p>Subtotal</p>
+                                        <p>$262.00</p>
+                                        </div>
+                                        <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                                        <div className="mt-6">
+                                        <a href="#" className="flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+                                            Checkout
+                                        </a>
+                                        </div>
+                                        <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+                                        <p>
+                                            or <button type="button" className="font-medium text-black"> Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                                        </p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                      {/* </>
+                    )
+                  } */}
 
                 <div onClick={() => setToogleMenuResponsive(!ToogleMenuResponsive)} className={"relative px-1 py-1 barIcon w-[30px] h-[30px] cursor-pointer lg:hidden ml-auto " + (ToogleMenuResponsive ? "active" : "")}>
                     <div className={!navabarScroll ? "!bg-Mblack" : ToogleMenuResponsive ? "!bg-Mblack" : ""}></div>

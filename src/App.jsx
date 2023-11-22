@@ -8,6 +8,7 @@ import { Home } from './pages/Home'
 import { Aeronautique } from './pages/Aeronautique'
 import { Marine } from './pages/Marine'
 import { Automobile } from './pages/Automobile'
+import { Partenaire } from './pages/Partenaire'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
            <Route path='/aeronautique' element={<Aeronautique />}/>
            <Route path='/marine' element={<Marine />}/>
            <Route path='/automobile' element={<Automobile />}/>
+           <Route path='/partner' element={<Partenaire />}/>
         </Routes>
       </Router>
     </>
