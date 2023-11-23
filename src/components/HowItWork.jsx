@@ -1,8 +1,8 @@
 import React from 'react'
-import Item1 from "../assets/how_work1.png"
-import Item2 from "../assets/how_work2.png"
-import Item3 from "../assets/how_work3.png"
-import Item4 from "../assets/how_work4.png"
+import Item1 from "../assets/how_work1.svg"
+import Item2 from "../assets/how_work2.svg"
+import Item3 from "../assets/how_work3.svg"
+import Item4 from "../assets/how_work4.svg"
 import { useTranslation } from 'react-i18next'
 export const HowItWork = () => {
     const [t, i18n] = useTranslation("global");
