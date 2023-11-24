@@ -17,7 +17,8 @@
     "react-dropdown-select": "^4.10.0",
     "react-i18next": "^13.5.0",
     "react-masonry-list": "^1.0.5",
-    "react-router-dom": "^6.18.0"
+    "react-router-dom": "^6.18.0",
+    "scrollreveal": "^4.0.9"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

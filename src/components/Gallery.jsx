@@ -1,17 +1,23 @@
 import React from 'react'
 import { gallery } from '../constant'
 import Layout from 'react-masonry-list'
-import Gellery1 from "../assets/gallery_1.png"
-import Gellery2 from "../assets/gallery_2.jpg"
-import Gellery3 from "../assets/gallery_3.png"
-import Gellery4 from "../assets/gallery_4.png"
+import Gellery1 from "../assets/zit pic.png"
+import Gellery2 from "../assets/deco pic.png"
+import Gellery3 from "../assets/gel pic.png"
+import Gellery4 from "../assets/deco pic (1).png"
 import Gellery5 from "../assets/gallery_5.png"
 import Gellery6 from "../assets/gallery_6.jpg"
 import Gellery7 from "../assets/gallery_7.png"
 import Gellery8 from "../assets/gallery_8.png"
 import Gellery9 from "../assets/gallery_9.png"
 import Gellery10 from "../assets/gallery_10.png"
+import ScrollReveal from 'scrollreveal'
+
 export const Gallery = () => {
+
+    ScrollReveal().reveal('.gallery_1', { delay: 250, duration: 500, })
+    ScrollReveal().reveal('.gallery_2', { delay: 500, duration: 550, })
+    ScrollReveal().reveal('.gallery_3', { delay: 750, duration: 600, })
   return (
     <section className='bg-black'>
         <div className="container">
@@ -25,46 +31,46 @@ export const Gallery = () => {
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
     <div class="grid gap-4">
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt=""/>
+            <img class="h-auto max-w-full rounded-lg gallery_1" src={Gellery1} alt=""/>
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt=""/>
+            <img class="h-auto max-w-full rounded-lg gallery_2" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt=""/>
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt=""/>
-        </div>
-    </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt=""/>
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt=""/>
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt=""/>
+            <img class="h-auto max-w-full rounded-lg gallery_3" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt=""/>
         </div>
     </div>
     <div class="grid gap-4">
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt=""/>
+            <img class="h-auto max-w-full rounded-lg gallery_1" src={Gellery2} alt=""/>
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt=""/>
+            <img class="h-auto max-w-full rounded-lg gallery_2" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt=""/>
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt=""/>
+            <img class="h-auto max-w-full rounded-lg gallery_3" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt=""/>
         </div>
     </div>
     <div class="grid gap-4">
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt=""/>
+            <img class="h-auto max-w-full rounded-lg gallery_1" src={Gellery3} alt=""/>
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt=""/>
+            <img class="h-auto max-w-full rounded-lg gallery_2" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt=""/>
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt=""/>
+            <img class="h-auto max-w-full rounded-lg gallery_3" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg gallery_1" src={Gellery4} alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg gallery_2" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg gallery_3" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt=""/>
         </div>
     </div>
 </div>
