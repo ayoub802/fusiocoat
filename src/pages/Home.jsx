@@ -21,7 +21,7 @@ export const Home = () => {
         <section className='bg-white'>
           <div className="container">
               <div class="text-center mb-10">
-                      <h2 class="font-bold text__48">UN CHOIX DE CÉRAMIQUES POUR <br class="hidden sm:block" /> PROFESSIONNELS & NOVICES
+                      <h2 class="font-bold text__48">UN CHOIX DE <span className='bg-Mblue py-.5 px-3 rounded-full text-white'>CÉRAMIQUES</span> POUR <br class="hidden sm:block" /> PROFESSIONNELS & NOVICES
                       </h2>
                   </div>
                   <div className="grid grid-cols-3 items-center gap-3">

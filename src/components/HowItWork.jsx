@@ -12,7 +12,7 @@ export const HowItWork = () => {
         <div class="container">
             <div class="text-center mb-10">
                 <p class="mb-2 text__16">{t('HOW IT WORKS')}</p>
-                <h2 class="font-bold text__48">Introducing your New Favorite <br class="hidden sm:block" /> Car Rental Experience
+                <h2 class="font-bold text__48">Pourquoi choisir notre solution<br class="hidden sm:block" /> pour votre automobile
                 </h2>
             </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 text-center sideLine">

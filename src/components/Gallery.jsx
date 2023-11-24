@@ -13,50 +13,64 @@ import Gellery9 from "../assets/gallery_9.png"
 import Gellery10 from "../assets/gallery_10.png"
 export const Gallery = () => {
   return (
-    <section className='bg-white'>
+    <section className='bg-black'>
         <div className="container">
         <div class="text-center mb-10">
-            <h2 class="font-bold text__48">LES AVIS DE NOS UTILISATEURS
+            <h2 class="font-bold text__48 text-white">LES AVIS DE NOS UTILISATEURS
             </h2>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 justify-center items-center place-content-center">
-            <div class="grid gap-4">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src={Gellery1} alt="" />
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src={Gellery2} alt="" />
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src={Gellery3} alt="" />
-                </div>
-            </div>
-            <div class="grid gap-4">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src={Gellery4} alt="" />
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src={Gellery5} alt="" />
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src={Gellery6} alt="" />
-                </div>
-            </div>
-            <div class="grid gap-4">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src={Gellery7} alt="" />
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src={Gellery8} alt="" />
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src={Gellery9} alt="" />
-                </div>
-            </div>
-        </div>
 
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt=""/>
         </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt=""/>
+        </div>
+    </div>
+</div>
+
+
+        </div>  
     </section>
   )
 }
