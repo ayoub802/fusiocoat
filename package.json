@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-dropdown-select": "^4.10.0",
     "react-i18next": "^13.5.0",
+    "react-masonry-list": "^1.0.5",
     "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
